@@ -131,7 +131,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1766adb080d27e17",
@@ -218,9 +219,11 @@
   },
   "active": "bf4ada5746a99a73",
   "lastOpenFiles": [
+    "attachments/Pasted image 20241112113208.png",
+    "attachments/Pasted image 20241112112301.png",
     "gpt 복사내용.md",
-    "2-2/컴퓨터 구조.md",
     "2-2/UI_UX.md",
+    "2-2/컴퓨터 구조.md",
     "2-2/자료구조.md",
     "attachments/Pasted image 20241104113926.png",
     "attachments/Pasted image 20241104110658.png",
