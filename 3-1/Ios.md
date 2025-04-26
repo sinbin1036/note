@@ -1,3 +1,134 @@
+swift 언어
+변수 : 지정된 값을 변경할수 있는데이터
+- var
+상수 : 한번 값을 할당하면 변경 할수 없는 데이터
+- let
+컬렉션 타입
+- 배열
+```
+var shoppingList: [String] = ["Eggs", "Milk"]
+print(shoppingList) // 출력: ["Eggs", "Milk"]
+
+```
+- 세트
+```
+var favoriteGenres: Set<String> = ["Rock", "Classical", "Hip hop"] print(favoriteGenres) // 출력: ["Rock", "Classical", "Hip hop"]
+```
+`.inset` : 값 추가
+`.remove` : 값 제거
+`.contains` : 세트 값 포함 여부 확인
+- 딕셔너리
+```
+var airports: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+print(airports) // 출력: ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+```
+
+for문
+```
+let fruits = ["Apple", "Banana", "Cherry"]
+
+for fruit in fruits {
+    print(fruit)
+}
+
+```
+
+- where 절을 활용한 조건부 반복
+```
+let numbers = [10, 20, 30, 40, 50]
+
+for number in numbers where number > 30 {
+    print(number)
+}
+
+```
+
+- 인덷스와 값 순회
+```
+let animals = ["Dog", "Cat", "Bird"]
+
+for (index, animal) in animals.enumerated() {
+    print("\(index + 1)번째 동물은 \(animal)입니다.")
+}
+```
+
+repeat-while
+```
+repeat {
+    // 조건이 참인 동안 반복해서 실행되는 코드
+} while 조건
+```
+
+함수
+```
+func 함수이름(매개변수이름: 매개변수타입) -> 반환타입 {
+    // 함수가 수행할 작업
+    return 반환값
+}
+
+//예제
+func greet(person: String) -> String {
+    let greeting = "Hello, \(person)!"
+    return greeting
+}
+
+let greetingMessage = greet(person: "Alice")
+print(greetingMessage) // 출력: Hello, Alice!
+```
+
+- 내부 매개변수와 외부 매개변수
+```
+func greet(person: String, from hometown: String) -> String {
+    return "Hello, \(person) from \(hometown)!"
+}
+
+print(greet(person: "Diana", from: "Seoul")) // 출력: Hello, Diana from Seoul!
+//외부에선 hometown이 아닌 from으로 호출시 사용됨
+```
+
+- 튜플 반환
+```
+func addAndMultiply(a: Int, b: Int) -> (sum: Int, product: Int) {
+    let sum = a + b
+    let product = a * b
+    return (sum, product)
+}
+
+let result = addAndMultiply(a: 3, b: 4)
+print("합은 \(result.sum)이고, 곱은 \(result.product)입니다.") // 출력: 합은 7이고, 곱은 12입니다.
+
+```
+
+
+클래스 구조체 차이점
+- 클래스는 참조 타입 : 전달
+- 구조체는 값 타입 : 복사
+
+상속
+- 속성 재정의 : 자식 클래스가 부모클래스의 속성를 재정의할수 있다 
+	override
+- 메소드 재정의 : 자식 클래스가 부모클래스의 메서드를 재정의할수 있다
+- super 키워드 : 키워드는 서브 클래스에서 슈퍼 클래스의 속성과 메서드를 참조할 때
+
+참조
+- 동일성 검사 : 서로 동일한 인스턴스를 참조 하고 있는지 확인하는것
+- 강한 참조 사이크 :  서로가 서로를 참조하여 메모리가 해제되지 않는 상황
+- 약한 참조와 미소유 참조 : 약한 참조 weak와 미소유 참조unowned를 이용해 메모리 무한 뺑뺑이를 방지 할수 있다
+
+스위프트 장점
+- 빠르고 강력하다
+- 완전한 플렛폼이다
+- 현대적이다
+- 상호반응적인 플레이그라운드
+- 오픈소스이다
+- 안전을 위한 설계가능하다
+
+스토리보드
+- 화면간의 흐름 및 전체적인 모양을 시작적인 방식으로 연결하고 표현하여 직관적으로 앱의 흐름을 확인 할수 있게 만든 기능
+
+
+
+
 ## Swift iOS 앱 개발 정리본 (03~05장)
 
 ---
@@ -9,13 +140,15 @@
 - 역할: 이미지를 보여주는 뷰
     
 - 주요 메서드/속성: `.image`, `UIImage(named:)`
-    
+	`.image` = 이미지뷰에 보여줄 이미지를 생성할때 사용
+    `UIImage(named:)` = 프로젝트에 포함된 이미지 파일을 로드한다
 - 주의사항: 아웃렛 변수 연결 후 사용 / 뷰 모드 설정(Aspect Fit 등)
     
 
 #### 📌 UIDatePicker
-
-- 역할: 날짜 및 시간 선택 위젯
+- picker : 아이폰에서 원하는 항목을 선택 할수 있게 해주는 객체
+	
+- 역할: 날짜 및 시간 선택 객체로서, 시계, 알람탑에서 자주사용되는 기능중 하나
     
 - 주요 메서드: `.date`, `addTarget()` 또는 `@IBAction`
     
@@ -32,6 +165,7 @@
     
 - 커스텀 출력: `viewForRow()` 이용 가능 (이미지 출력 등)
     
+- 델리게이트 : 어떤 객체의 행동이나 상태 변화에 대해 대신 처리하는 객체를 지정하는 프로                      그래밍 패턴
 
 ---
 
