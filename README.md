@@ -14,3 +14,8 @@ git push origin main</code></pre>
   <h3>수동으로 pull 하기</h3>
   <pre><code>git pull origin main</code></pre>
 </div>
+
+## 타입스크립 재설치
+```
+npm install -D typescript @types/react @types/node
+```
